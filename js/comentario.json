@@ -1,0 +1,15 @@
+{
+    "usuarios":[
+        {
+            "nome": "Ravi",
+            "email": "ravi@gmail.com",
+            "comentario": " Ola a loja e interessante, creio que precisa de um reajuste."
+        },
+        {
+            "nome": "Duda",
+            "email": "duda@gmail.com",
+            "comentario": " Ola, a loja e interessante, creio que precisa de um reajuste, Mas adorei."
+        }
+    
+    ]
+}

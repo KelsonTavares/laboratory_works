@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "laboratio",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}

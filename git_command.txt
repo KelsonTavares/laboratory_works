@@ -1,0 +1,7 @@
+echo "# laboratory_works" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KelsonTavares/laboratory_works.git
+git push -u origin main
