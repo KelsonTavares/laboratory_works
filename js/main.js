@@ -46,7 +46,7 @@ burger.addEventListener("click", () => {
            if (startTime === null) startTime = currentTime;
            const timeElapsed = currentTime - startTime;
            const run = ease(timeElapsed, startPosition, targetPosition, duration);
-           window.scrollTo(0,run);
+           window.scrollTo(1,run);
            if (timeElapsed < duration) requestAnimationFrame(animation);
        };
        requestAnimationFrame(animation);
@@ -90,7 +90,7 @@ btn_enviar.addEventListener('click', () =>{
   m_comentario.innerText = message.value;
 
   // Adicionar no arquivo json
-  gravarDados(name.value, email.value, message.value);
+  //gravarDados(name.value, email.value, message.value);
   // Adicionar tag comentario
   comentario.appendChild(n_comentario);
   comentario.appendChild(e_comentario);
@@ -139,22 +139,23 @@ fetch("/js/comentario.json").then((response)=>{
 })
 
 
-function gravarDados(n, em, co){
+/*function gravarDados(n, em, co){
 
-  const fs = import('fs');
+  //const fs = import('fs');
   // Lendo o arquivo comentario.json
   const DB = import('/js/comentario.json');
   const obj = {name: n, email: em, comentario: co};
 
   // adicionando novos dados ao comentario
-  DB.pusher(obj);
+  //DB.write(obj);
+  console.log(DB);
 
-  fs.writeFile('DB.json', JSON.stringify(DB), err => {
+  /*fs.writeFile('DB.json', JSON.stringify(DB), err => {
     //checando erros
     if (err) return err;
     
     console.log('Gravado');
   })
 
-}
+}*/
 
