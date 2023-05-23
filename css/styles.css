@@ -330,5 +330,31 @@ table img{
   margin-top: 5px;
 }
 
+#comentarios{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #ffff;
+}
+
+#comentarios:before{
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #5fcf80;
+  border-radius: 5px;
+  width: 400px;
+  height: 300px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+
   /* menu, formatacao de texto, footer, novidade do site, impacto to tema, muitimedia, imagem.
 */

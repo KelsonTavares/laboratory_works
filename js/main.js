@@ -1,12 +1,18 @@
 
 let preloader = document.getElementById('preloader');
 if(preloader){
-  console.log('Done');
   window.addEventListener('load', ()=>{
     preloader.remove();
   })
 }
 
+
+/*let co = document.getElementById('comentarios');
+if(co){
+  window.addEventListener('click', ()=>{
+    co.remove();
+  })
+}*/
 // Inicializando o carousel
 //const carousel = new bootstrap.Carousel('#carousel-jogos');
 
@@ -71,6 +77,7 @@ btn_enviar.addEventListener('click', () =>{
   var name = document.querySelector('#nome');
   var email = document.querySelector('#email');
   var message = document.querySelector('#message');
+  //var opinions = document.querySelectorAll('.opnions');
 
 
   var section_contacto = document.querySelector('#contacto');
@@ -83,7 +90,6 @@ btn_enviar.addEventListener('click', () =>{
   n_comentario.classList = "text-light";
   e_comentario.classList = "text-light";
 
-
   // Adicionar texto nas tags
   n_comentario.innerText = name.value;
   e_comentario.innerText = email.value;
@@ -95,13 +101,21 @@ btn_enviar.addEventListener('click', () =>{
   comentario.appendChild(n_comentario);
   comentario.appendChild(e_comentario);
   comentario.appendChild(m_comentario);
-
+  //console.log(comentario.childElementCount);
   // Adicionar a tag section
   section_contacto.appendChild(comentario);
+  //console.log(opinion.length);
+  //console.log(section_contacto.childElementCount-1);
+
+  
 
   name.value = "";
   email.value = "";
   message.value = "";
+
+  //if(section_contacto.childElementCount-1 > 3 ){
+    //comentarios();
+  //}
 });
 
 // Comentarios
@@ -138,24 +152,39 @@ fetch("/js/comentario.json").then((response)=>{
   })
 })
 
-
-/*function gravarDados(n, em, co){
-
-  //const fs = import('fs');
-  // Lendo o arquivo comentario.json
-  const DB = import('/js/comentario.json');
-  const obj = {name: n, email: em, comentario: co};
-
-  // adicionando novos dados ao comentario
-  //DB.write(obj);
-  console.log(DB);
-
-  /*fs.writeFile('DB.json', JSON.stringify(DB), err => {
-    //checando erros
-    if (err) return err;
+/*function comentarios(){
+    fetch("/js/comentario.json").then((response)=>{
+      response.json().then((dados)=>{
+        dados.usuarios.map((usuario) => {
     
-    console.log('Gravado');
-  })
-
+          var section_comentario = document.querySelector('#comentarios');
+          var comentario = document.createElement("div");
+          var n_comentario = document.createElement("h5");
+          var e_comentario = document.createElement("h6");
+          var m_comentario = document.createElement("p");
+          
+          section_comentario.classList = "sections";
+          comentario.classList = "opinion bg-dark p-2 align-items-center text-light border";
+          n_comentario.classList = "text-light";
+          e_comentario.classList = "text-light";
+    
+    
+          // Adicionar texto nas tags
+          n_comentario.innerText = usuario.nome;
+          e_comentario.innerText = usuario.email;
+          m_comentario.innerText = usuario.comentario;
+    
+          // Adicionar tag comentario
+          comentario.appendChild(n_comentario);
+          comentario.appendChild(e_comentario);
+          comentario.appendChild(m_comentario);
+    
+          // Adicionar a tag section
+          section_comentario.appendChild(comentario);
+    
+        })
+      })
+    })
 }*/
+
 
